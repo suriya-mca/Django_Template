@@ -1,3 +1,9 @@
+# python env file
 env
+
+# pycache files
 core/__pycache__
 core/django/__pycache__
+
+# .env file
+.env
