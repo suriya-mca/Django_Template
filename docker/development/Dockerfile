@@ -10,7 +10,8 @@ WORKDIR /app
 COPY ../../ /app
 COPY ./script/start-dev.sh /app/script/start.sh
 
-RUN pip install --upgrade pip && \
+RUN chmod +x /app/script/start.sh && \
+    pip install --upgrade pip && \
     pip install --no-cache-dir --upgrade -r requirements.txt
 
 ENTRYPOINT ["sh", "-c", "./script/start.sh"]
