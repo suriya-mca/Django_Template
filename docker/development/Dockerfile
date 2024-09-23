@@ -1,0 +1,16 @@
+FROM python:3.12-alpine
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PIP_DISABLE_PIP_VERSION_CHECK 1
+ENV PIP_NO_CACHE_DIR 1
+
+WORKDIR /app
+
+COPY ../../ /app
+COPY ./script/start-dev.sh /app/script/start.sh
+
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir --upgrade -r requirements.txt
+
+ENTRYPOINT ["sh", "-c", "./script/start.sh"]
