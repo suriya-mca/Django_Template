@@ -60,10 +60,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django_prometheus.db.backends.postgresql',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         "NAME": config("DB_NAME"),
+#         "USER": config("DB_USER"),
+#         "PASSWORD": config("DB_PASSWORD"),
+#         "HOST": config("DB_HOST"),
+#         "PORT": config("DB_POPRT"),
 #         'OPTIONS': {
-#             'service': 'postgres/my_service',
-#             'passfile': 'postgres/.my_pgpass',
 #             'pool': True,
 #         },
 #     }
